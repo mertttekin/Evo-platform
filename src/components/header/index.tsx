@@ -27,7 +27,7 @@ export default function Header() {
       </div>
       <div className="hidden xl:flex items-center justify-center space-x-2">
           <RealButton />
-          {/* <Time /> */}
+          <Time />
           <LocaleSwitcher />
           <Profile/>
       </div>

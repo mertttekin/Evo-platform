@@ -84,8 +84,8 @@ export default function LocaleSwitcher() {
       <PopoverContent className=" w-[150px] p-0 " align="end">
         <Command>
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
-            <CommandGroup>
+            <CommandEmpty>Empty</CommandEmpty>
+            <CommandGroup className="bg-defaultbg">
               {otherlaguages.map((language) => (
                 <CommandItem
                   key={language.id}

@@ -159,12 +159,12 @@ export default function TradeTable() {
   return (
     <div className="w-full">
       <div className="rounded-md border">
-        {/* <div className="p-2 flex items-center justift-start overflow-hidden">
+        <div className="p-2 flex items-center justift-start overflow-hidden">
           <Button className="text-black bg-gray-100">Open Trades(3)</Button>
           <Button className="text-[#838F9E]">Pending Trades</Button>
           <Button className="text-[#838F9E]">Trade history</Button>
           <Input className="w-56 h-8 bg-white" placeholder="Search.." />
-        </div> */}
+        </div>
         <Table className="overflow-hidden">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -206,10 +206,10 @@ export default function TradeTable() {
             )}
           </TableBody>
         </Table>
-        {/* <div className="flex justify-end items-center space-x-4 p-4">
+        <div className="flex justify-end items-center space-x-4 p-4">
           <p className="text-green">$ 169.5</p>
           <Button className="bg-red">Close All</Button>
-        </div> */}
+        </div>
       </div>
     </div>
   );

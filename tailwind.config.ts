@@ -68,7 +68,7 @@ export default {
       backgroundColor:{
         orangebg: "#FF8C001A",
         orangemain:"#FF8C00",
-        defaultbg :"#EAECEFB2",
+        defaultbg :"#EAECEF",
         defaultmain:"##EAECEF",
         profileColor:"#004ADE",
         tableBgGreen : "#E8FAEF",

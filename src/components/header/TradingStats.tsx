@@ -55,7 +55,7 @@ function StatItem({ label, value,color,strong }: StatItemProps) {
   return (
     <div className="flex flex-col items-start text-gray-700 px-3 -space-y-0.5">
       <span  className={cn("font-normal text-[10px] sm:text-sm text-tradingNormal",roboto.className,{ "font-bold text-tradingPriceNormal": strong })}>{label}</span>
-      <span className={cn("font-normal text-[10px] sm:text-base text-tradingPriceNormal", roboto.className,{"text-green":color === 'green'},{"text-red-500":color === 'red'})}>{formattedValue}</span>
+      <span className={cn("font-normal text-[10px] sm:text-base text-tradingPriceNormal", roboto.className,{"text-green":color === 'green'},{"text-red":color === 'red'})}>{formattedValue}</span>
     </div>
   );
 }
