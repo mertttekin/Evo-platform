@@ -1,13 +1,14 @@
 
-# Eco Platform Test Hiring Design
+# Evo Platform Test Hiring Design
 
 [screen-capture.webm](https://github.com/user-attachments/assets/ce60bd3c-b500-43ab-af59-e8edc33ad868)
 
 ## Table of Contents
 
+- [Built With](#built-with)
 - [Installation](#installation)
 - [Running the app](#running-the-app)
-- [Built With](#built-with)
+
 
 ## Built With
 
