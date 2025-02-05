@@ -1,4 +1,5 @@
 "use client";
+
 import { Input } from "@/components/ui/input";
 import * as React from "react";
 import {
@@ -52,7 +53,7 @@ const data: Trade[] = [
     commission: "$0.00",
     swap: "$0.00",
     profit: "$61.25",
-    action : "close",
+    action: "close",
   },
   {
     orderId: "#2198667",
@@ -68,7 +69,7 @@ const data: Trade[] = [
     commission: "$0.00",
     swap: "$0.00",
     profit: "-$123.00",
-    action : "close",
+    action: "close",
   },
   {
     orderId: "#2198667",
@@ -84,7 +85,7 @@ const data: Trade[] = [
     commission: "$0.00",
     swap: "$0.00",
     profit: "$170.00",
-    action : "close",
+    action: "close",
   },
 ];
 
@@ -126,10 +127,15 @@ export const columns: ColumnDef<Trade>[] = [
     cell: ({ row }) => {
       return (
         <div
-          className={cn('flex items-center justify-center rounded-xl py-1 px-2 capitalize',{
-            "bg-tableBgGreen text-tableTextGreen": row.getValue("type") === "buy",
-            "bg-tableBgRed text-tableTextRed": row.getValue("type") === "sell",
-          })}
+          className={cn(
+            "flex items-center justify-center rounded-xl py-1 px-2 capitalize",
+            {
+              "bg-tableBgGreen text-tableTextGreen":
+                row.getValue("type") === "buy",
+              "bg-tableBgRed text-tableTextRed":
+                row.getValue("type") === "sell",
+            }
+          )}
         >
           {row.getValue("type")}
         </div>
@@ -139,13 +145,62 @@ export const columns: ColumnDef<Trade>[] = [
   { accessorKey: "volume", header: "Volume" },
   { accessorKey: "pips", header: "Pips" },
   { accessorKey: "openPrice", header: "Open Price" },
-  { accessorKey: "current", header: "Current" },
-  { accessorKey: "stopLoss", header: "Stop Loss" },
-  { accessorKey: "takeProfit", header: "Take Profit" },
+  {
+    accessorKey: "current",
+    header: "Current",
+    cell: ({ row }) => {
+      const currentValue = parseFloat(row.getValue("current"));
+      const openPrice = parseFloat(row.getValue("openPrice"));
+
+      return (
+        <div
+          className={cn("capitalize", {
+            "text-tableTextGreen": currentValue > openPrice,
+            "text-tableTextRed": currentValue < openPrice,
+            "text-[#3F4650]": currentValue === openPrice,
+          })}
+        >
+          {row.getValue("current")}
+        </div>
+      );
+    },
+  },
+  {
+    accessorKey: "stopLoss",
+    header: "Stop Loss",
+    cell: ({ row }) => {
+      return (
+        <Button className="text-[#3F4650] capitalize border ">
+          {row.getValue("stopLoss")}
+        </Button>
+      );
+    },
+  },
+  {
+    accessorKey: "takeProfit",
+    header: "Take Profit",
+    cell: ({ row }) => {
+      return (
+        <Button className="text-[#3F4650] capitalize border ">
+          {row.getValue("takeProfit")}
+        </Button>
+      );
+    },
+  },
   { accessorKey: "commission", header: "Commission" },
   { accessorKey: "swap", header: "Swap" },
   { accessorKey: "profit", header: "Profit" },
-  { accessorKey: "action", header: "Action" },
+  {
+    accessorKey: "action",
+    header: "Action",
+    cell: ({ row }) => {
+      return (
+        <Button className="text-[#3F4650] capitalize bg-[#E8EAED]">
+          {row.getValue("action")}
+        </Button>
+      );
+    },
+  },
 ];
 
 export default function TradeTable() {

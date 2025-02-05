@@ -1,16 +1,11 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Roboto } from "next/font/google";
 import type { CombinedStock } from "@/contexts/StockContext";
 import { useStock } from "@/hooks/use-stock-context";
-
-const roboto = Roboto({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 interface Stock {
   symbol: string;
@@ -24,20 +19,25 @@ interface StockData {
   stocks: Stock[];
 }
 
-
 interface StockListProps {
   searchTerm: string;
 }
 
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export default function StockList({ searchTerm }: StockListProps) {
   const [data, setData] = useState<StockData | null>(null);
   const [combinedData, setCombinedData] = useState<CombinedStock[]>([]);
-  const {changeStock} = useStock();
-  
+  const { changeStock } = useStock();
+
   useEffect(() => {
     fetch("/data/stockData.json")
       .then((response) => {
-        if(!response.ok) throw new Error('Status: '+ response.status);
+        if (!response.ok) throw new Error("Status: " + response.status);
 
         return response.json();
       })
@@ -82,7 +82,12 @@ export default function StockList({ searchTerm }: StockListProps) {
       )}
     >
       {filteredData.map((stock) => (
-        <div  key={stock.pair} onClick={()=>{changeStock(stock)}}>
+        <div
+          key={stock.pair}
+          onClick={() => {
+            changeStock(stock);
+          }}
+        >
           <div className="rounded-xl px-4 py-2 hover:bg-[#E8EFFD] hover:border-l-2 flex justify-between items-center hover:border-blue-600 group cursor-pointer">
             <div className="flex items-center space-x-2">
               <div className="relative w-[26px] h-[34px]">
@@ -123,7 +128,7 @@ function Divider() {
 }
 
 const formatNumber = (num: number) => {
-  const [integerPart, decimalPart] = num.toString().split(".");
+  const [integerPart] = num.toString().split(".");
   const integerDigits = integerPart.length;
 
   let fractionDigits = 6 - integerDigits;

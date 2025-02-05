@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
 import { StockContext } from "@/contexts/StockContext";
 import { use } from "react";
 
 export const useStock = () => {
-    const stockContext = use(StockContext);
+  const stockContext = use(StockContext);
 
-    if (!stockContext) throw new Error('Wrap app with Pair Provider');
+  if (!stockContext) throw new Error("Wrap app with Pair Provider");
 
-    return stockContext;
-}
+  return stockContext;
+};

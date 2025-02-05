@@ -1,12 +1,11 @@
-'use client'
+"use client";
 
-import Image from "next/image";
 import RealButton from "./RealButton";
 import TradingStats from "./TradingStats";
 import Logo from "./Logo";
-import Time from "./Time";
 import LocaleSwitcher from "./LocaleSwitcher";
 import Profile from "./Profile";
+import Time from "./Time";
 
 export default function Header() {
   return (
@@ -26,10 +25,10 @@ export default function Header() {
         />
       </div>
       <div className="hidden xl:flex items-center justify-center space-x-2">
-          <RealButton />
-          <Time />
-          <LocaleSwitcher />
-          <Profile/>
+        <RealButton />
+        <Time />
+        <LocaleSwitcher />
+        <Profile />
       </div>
     </header>
   );

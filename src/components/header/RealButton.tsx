@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
 import { GoDotFill } from "react-icons/go";
 import { MdArrowDropDown } from "react-icons/md";
 import { cn } from "@/lib/utils";
@@ -56,22 +55,27 @@ export default function RealButton() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className={cn("w-[100] capitalize rounded-2xl flex items-center justify-center border-none h-18", {
-            [activeMode?.color ?? ""]: true,
-            [activeMode?.hoverColor ?? ""]: true,
-          })}
+          className={cn(
+            "w-[100] capitalize rounded-2xl flex items-center justify-center border-none h-18",
+            {
+              [activeMode?.color ?? ""]: true,
+              [activeMode?.hoverColor ?? ""]: true,
+            }
+          )}
         >
-          <GoDotFill  />
+          <GoDotFill />
           {activeMode?.label}
           <MdArrowDropDown className="w-20" color="gray" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="popover-content-width-same-as-its-trigger p-0  rounded-2xl">
-        <Command className={cn("rounded-2xl", {
-          'bg-orangebg': activeMode?.id==='real',
-          "bg-green": activeMode?.id === 'demo'
-        })}>
-          <CommandList >
+        <Command
+          className={cn("rounded-2xl", {
+            "bg-orangebg": activeMode?.id === "real",
+            "bg-green": activeMode?.id === "demo",
+          })}
+        >
+          <CommandList>
             <CommandGroup className="h-16">
               {otherModes.map((mode) => (
                 <CommandItem

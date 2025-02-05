@@ -25,7 +25,7 @@ export default function StockProvider({ children }: StockProviderProps) {
     pair: "EURUSD",
     buy: 1,
     sell: 1,
-    flag_url_from: '/assets/stockFlags/eur.svg.png',
+    flag_url_from: "/assets/stockFlags/eur.svg.png",
     flag_url_to: "/assets/stockFlags/usd.svg.png",
   });
 

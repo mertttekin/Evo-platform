@@ -1,41 +1,21 @@
 "use client";
 
 import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
 import { MdArrowDropDown } from "react-icons/md";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverTrigger } from "@/components/ui/popover";
+import { Roboto } from "next/font/google";
 
-import { Roboto } from 'next/font/google'
- 
 const roboto = Roboto({
-  weight: '500',
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-const getCurrentTime = () => {
-
-    const now = new Date();
-    return now.toLocaleTimeString('en-US', { hour12: false });
-  };
+  weight: "500",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function ComboboxDemo() {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("14:12:09");
+  const [value] = React.useState("14:12:09");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -44,9 +24,12 @@ export default function ComboboxDemo() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className={cn("w-[100] bg-white capitalize rounded-2xl flex items-center justify-center border-none h-18 ",roboto.className)}
+          className={cn(
+            "w-[100] bg-white capitalize rounded-2xl flex items-center justify-center border-none h-18 ",
+            roboto.className
+          )}
         >
-          { getCurrentTime() || value}
+          {value}
           <MdArrowDropDown className="w-20" color="gray" />
         </Button>
       </PopoverTrigger>

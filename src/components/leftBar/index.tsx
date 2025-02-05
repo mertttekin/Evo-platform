@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState } from 'react';
-import SearchBar from './SearchBar';
-import StockList from './StockList';
+import { useState } from "react";
+import SearchBar from "./SearchBar";
+import StockList from "./StockList";
 
 export default function Index() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (value: string) => {
     setSearchTerm(value);

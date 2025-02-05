@@ -1,10 +1,4 @@
 import { Roboto } from "next/font/google";
-
-const roboto = Roboto({
-  weight: "500",
-  subsets: ["latin"],
-  display: "swap",
-});
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -14,14 +8,15 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+const roboto = Roboto({
+  weight: "500",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function Profile() {
   return (

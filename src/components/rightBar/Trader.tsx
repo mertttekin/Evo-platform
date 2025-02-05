@@ -1,10 +1,9 @@
-'use client';
+"use client";
 
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -18,6 +17,7 @@ import { Separator } from "@/components/ui/separator";
 import { Roboto } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { useStock } from "@/hooks/use-stock-context";
+
 const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
@@ -25,10 +25,10 @@ const roboto = Roboto({
 });
 
 export default function Trader() {
-  const {stock} = useStock();
+  const { stock } = useStock();
 
   return (
-    <Tabs defaultValue="sell" className="w-[360px] bg-white">
+    <Tabs defaultValue="sell" className="w-full lg:w-[360px] bg-white">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger
           className="uppercase bg-red text-white rounded-none "
@@ -44,8 +44,8 @@ export default function Trader() {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="sell">
-        <Card>
-          <CardHeader>
+        <Card className="border-0">
+          <CardHeader className="p-3 sm:p-4">
             <CardTitle>
               <div className="flex items-center space-x-2">
                 <div className="relative w-[26px] h-[34px]">
@@ -75,7 +75,7 @@ export default function Trader() {
               Make changes to your account here. Click save when you're done.
             </CardDescription> */}
           </CardHeader>
-          <CardContent className="space-y-2">
+          <CardContent className="space-y-2 p-3 sm:p-4">
             <div className="space-y-1">
               <Label className="text-[#D1D4D9] text-[14px]" htmlFor="volume">
                 Volume in lot
@@ -130,7 +130,7 @@ export default function Trader() {
               <p className="text-[14px] pr-2">$ 1,053.53</p>
             </div>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="p-3 sm:p-4">
             <Button
               className="text-white bg-red w-full hover:scale-105 duration-500 rounded-2xl"
               variant="none"
@@ -141,12 +141,12 @@ export default function Trader() {
         </Card>
       </TabsContent>
       <TabsContent value="buy">
-        <Card>
-          <CardHeader>
+        <Card className="border-0">
+          <CardHeader className="p-3 sm:p-4">
             <CardTitle>
               <div className="flex items-center space-x-2">
                 <div className="relative w-[26px] h-[34px]">
-                <Image
+                  <Image
                     className="border-white border-1 rounded-full absolute top-0 right-0"
                     alt=""
                     height={20}
@@ -172,7 +172,7 @@ export default function Trader() {
               Make changes to your account here. Click save when you're done.
             </CardDescription> */}
           </CardHeader>
-          <CardContent className="space-y-2">
+          <CardContent className="space-y-2 p-3 sm:p-4">
             <div className="space-y-1">
               <Label className="text-[#D1D4D9] text-[14px]" htmlFor="volume">
                 Volume in lot
@@ -227,7 +227,7 @@ export default function Trader() {
               <p className="text-[14px] pr-2">$ 1,053.53</p>
             </div>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="p-3 sm:p-4">
             <Button
               className="text-white bg-green w-full hover:scale-105 duration-500 rounded-2xl"
               variant="none"
