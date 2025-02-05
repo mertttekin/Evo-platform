@@ -1,0 +1,59 @@
+{
+  "stocks": [
+    {
+      "symbol": "EUR",
+      "name": "Euro",
+      "flag_url": "/assets/stockFlags/eur.svg.png",
+      "buy": 1.1800,
+      "sell": 1.1850,
+      "high": 1.1900,
+      "low": 1.1750,
+      "volume": 1000000,
+      "date": "2023-10-01"
+    },
+    {
+      "symbol": "USD",
+      "name": "US Dollar",
+      "flag_url": "/assets/stockFlags/usd.svg.png",
+      "buy": 1.0000,
+      "sell": 1.0050,
+      "high": 1.0100,
+      "low": 0.9950,
+      "volume": 800000,
+      "date": "2023-10-01"
+    },
+    {
+      "symbol": "JPY",
+      "name": "Japanese Yen",
+      "flag_url": "/assets/stockFlags/jpy.svg.png",
+      "buy": 110.00,
+      "sell": 110.50,
+      "high": 111.00,
+      "low": 109.50,
+      "volume": 1200000,
+      "date": "2023-10-01"
+    },
+    {
+      "symbol": "CAD",
+      "name": "Canadian Dollar",
+      "flag_url": "/assets/stockFlags/cad.svg.png",
+      "buy": 1.2500,
+      "sell": 1.2550,
+      "high": 1.2600,
+      "low": 1.2450,
+      "volume": 900000,
+      "date": "2023-10-01"
+    },
+    {
+      "symbol": "CHF",
+      "name": "Swiss Franc",
+      "flag_url": "/assets/stockFlags/chf.svg.png",
+      "buy": 0.9200,
+      "sell": 0.9250,
+      "high": 0.9300,
+      "low": 0.9150,
+      "volume": 900000,
+      "date": "2023-10-01"
+    }
+  ]
+}
